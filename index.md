@@ -4,6 +4,13 @@ title: foodPrep Demo
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+table { table-layout: fixed; width: 100%; }
+table tr { border-bottom:1px solid #e9e9e9; }
+table thead td, th {border-left: 1px solid #f2f2f2; border-right: 1px solid #d5d5d5; background: #ddd url("../images/sprites4.png") repeat-x scroll 0 100% ; font-weight: bold; text-align:left;}
+table tr td, th { border:1px solid #D5D5D5; padding:15px;}
+table tr:hover { background:#fcfcfc;}
+table tr ul.actions {margin: 0;}
+table tr ul.actions li {display: inline; margin-right: 5px;}
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -55,7 +62,7 @@ title: foodPrep Demo
   </div>
 </div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
-<table style="width: 100%;" id="stuff">
+<table id="stuff">
 	<tr>
 		<th>Time</th>
 		<th>Sunday</th>
