@@ -3,17 +3,63 @@ title: foodPrep Demo
 ---
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
+<div class="dropdown">
+	<button type="button" onclick="dropDown()" id = "butt">Click Me Too!</button>
+	<div id="dropDownBox" class="dropdown-content">
+		<a>1</a>
+	</div>
+</div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
+<style>
+	.dropbtn {
+		background-color: #3498DB;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+
+	.dropbtn:hover, .dropbtn:focus {
+		background-color: #2980B9;
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		overflow: auto;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown a:hover {background-color: #ddd}
+
+	.show {display:block;}
+</style>
 <table style="width: 100%;" id="stuff">
 	<tr>
-		<th style="width:100px">Time</th>
-		<th style="width: calc(100%/8);">Sunday</th>
-		<th style="width: calc(100%/8);">Monday</th>
-		<th style="width: calc(100%/8);">Tuesday</th>
-		<th style="width: calc(100%/8);">Wednesday</th>
-		<th style="width: calc(100%/8);">Thursday</th>
-		<th style="width: calc(100%/8);">Friday</th>
-		<th style="width: calc(100%/8);">Saturday</th>
+		<th>Time</th>
+		<th>Sunday</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+		<th>Saturday</th>
 	</tr>
 	<tr>
 		<th>12:00 AM</th>
@@ -27,6 +73,9 @@ title: foodPrep Demo
 	</tr>
 </table>
 <script>
+	function dropDown(){
+		document.getElementById("dropDownBox").classList.toggle("show");
+	}
 	function sendData(data) {
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
