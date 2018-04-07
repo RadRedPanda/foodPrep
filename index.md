@@ -2,7 +2,7 @@
 title: foodPrep Demo
 ---
 
-<h1>foodPrep</h1><p>
+<h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <script>
 	function sendData(data) {
