@@ -99,7 +99,7 @@ table{
 					tableText += "AM";
 				}
 				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><a>Link 1</a><a>Link 2</a><a>Link 3</a></div></div></th>';
+					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><a>Linfsdkjghsldsfdsds 1</a><a>Link 2</a><a>Link 3</a></div></div></th>';
 				}
 				tableText += '</tr>';
 			}
