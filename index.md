@@ -1,34 +1,19 @@
 ---
 title: foodPrep Demo
 ---
-<style type="text/css">
-table {
-	height: 400px;
-	width: 400px;
-	margin: 0; padding: 0;
-	border-collapse: collapse;
-}
-td { 
-	border: 1px solid #CC3;
-	border-spacing: 0;
-	height: 100px;
-	width: 100px;
-	margin: 0; padding: 0;
-}
-</style>
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table style="width: calc(100%/8);" id="stuff">
 	<tr>
-		<th>Time</th>
-		<th>Sunday</th>
-		<th>Monday</th>
-		<th>Tuesday</th>
+		<th>Time     </th>
+		<th>Sunday   </th>
+		<th>Monday   </th>
+		<th>Tuesday  </th>
 		<th>Wednesday</th>
-		<th>Thursday</th>
-		<th>Friday</th>
-		<th>Saturday</th>
+		<th>Thursday </th>
+		<th>Friday   </th>
+		<th>Saturday </th>
 	</tr>
 	<tr>
 		<th>12:00 AM</th>
