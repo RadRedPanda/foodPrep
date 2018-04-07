@@ -62,16 +62,6 @@ table{
 		<th>Friday</th>
 		<th>Saturday</th>
 	</tr>
-	<tr>
-		<th>12:00 AM</th>
-		<th>Sunday</th>
-		<th>Monday</th>
-		<th>Tuesday</th>
-		<th>Wednesday</th>
-		<th>Thursday</th>
-		<th>Friday</th>
-		<th>Saturday</th>
-	</tr>
 </table>
 <script>
 	function sendData(data) {
