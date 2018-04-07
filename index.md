@@ -4,16 +4,16 @@ title: foodPrep Demo
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
-<table style="width: calc(100%/8);" id="stuff">
+<table style="width: 100%;" id="stuff">
 	<tr>
-		<th>Time     </th>
-		<th>Sunday   </th>
-		<th>Monday   </th>
-		<th>Tuesday  </th>
-		<th>Wednesday</th>
-		<th>Thursday </th>
-		<th>Friday   </th>
-		<th>Saturday </th>
+		<th width="12.5%">Time</th>
+		<th width="12.5%">Sunday</th>
+		<th width="12.5%">Monday</th>
+		<th width="12.5%">Tuesday</th>
+		<th width="12.5%">Wednesday</th>
+		<th width="12.5%">Thursday</th>
+		<th width="12.5%">Friday</th>
+		<th width="12.5%">Saturday</th>
 	</tr>
 	<tr>
 		<th>12:00 AM</th>
