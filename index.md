@@ -34,7 +34,7 @@ table{
 
 .dropdown-content p {
     color: black;
-    padding: 12px 16px;
+    padding: 12px 12px;
     text-decoration: none;
     display: block;
 }
