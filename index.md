@@ -1,6 +1,21 @@
 ---
 title: foodPrep Demo
 ---
+<style type="text/css">
+table {
+	height: 400px;
+	width: 400px;
+	margin: 0; padding: 0;
+	border-collapse: collapse;
+}
+td { 
+	border: 1px solid #CC3;
+	border-spacing: 0;
+	height: 100px;
+	width: 100px;
+	margin: 0; padding: 0;
+}
+</style>
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
