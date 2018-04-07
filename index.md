@@ -10,7 +10,7 @@ title: foodPrep Demo
 	</div>
 </div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
-<style>
+<style type="text/css" media="screen">
 	.dropbtn {
 		background-color: #3498DB;
 		color: white;
