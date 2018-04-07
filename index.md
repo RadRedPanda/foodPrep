@@ -54,7 +54,7 @@ table tr ul.actions li {display: inline; margin-right: 5px;}
 <body>
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
+  <button class="dropbtn">derp</button>
   <div class="dropdown-content">
     <a>Link 1</a>
     <a>Link 2</a>
