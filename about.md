@@ -11,5 +11,5 @@ layout: default
 * One more
 
 <center>
-	<h1 font = "Courier">text</h1>
+	<h1 style = "font-family:courier";>foodPrep</h1><p>
 </center>
