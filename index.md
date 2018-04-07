@@ -6,7 +6,7 @@ title: foodPrep Demo
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table style="width: 100%;" id="stuff">
 	<tr>
-		<th style="width: calc(100%/8);">Time</th>
+		<th style="width: 100px;">Time</th>
 		<th style="width: calc(100%/8);">Sunday</th>
 		<th style="width: calc(100%/8);">Monday</th>
 		<th style="width: calc(100%/8);">Tuesday</th>
