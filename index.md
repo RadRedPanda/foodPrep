@@ -1,7 +1,11 @@
 ---
 title: foodPrep Demo
 ---
-
+(setq markdown-xhtml-header-content
+      "<style type='text/css'>
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>")
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <div class="dropdown">
 	<button type="button" onclick="dropDown()" id = "butt">Click Me Too!</button>
