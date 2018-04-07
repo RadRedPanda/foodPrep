@@ -50,10 +50,18 @@ table{
 </head>
 <body>
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
+<div class="dropdown">
+  <button class="dropbtn">derpo</button>
+  <div class="dropdown-content">
+    <a>Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
+  </div>
+</div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table id="stuff">
 	<tr>
-		<th>Time</th>
+		<th>Tikhjkyugyugyume</th>
 		<th>Sunday</th>
 		<th>Monday</th>
 		<th>Tuesday</th>
@@ -110,13 +118,13 @@ table{
 				}
 				for(day=1; day<timeTable[hour].length; day++){
 					tableText += '<th><div class="dropdown">
-									<button class="dropbtn">derpo</button>
-									<div class="dropdown-content">
-										<a>Link 1</a>
-										<a>Link 2</a>
-										<a>Link 3</a>
-									</div>
-								</div></th>';
+  <button class="dropbtn">derpo</button>
+  <div class="dropdown-content">
+    <a>Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
+  </div>
+</div></th>';
 				}
 				tableText += '</tr>';
 			}
