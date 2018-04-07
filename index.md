@@ -4,10 +4,8 @@ title: foodPrep Demo
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-td.last {
-    width: 1px;
-    white-space: nowrap;
-}
+table{table-layout:fixed;}
+td{width:1px;white-space:nowrap;}
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -51,7 +49,7 @@ td.last {
 <body>
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <div class="dropdown">
-  <button class="dropbtn">derpy</button>
+  <button class="dropbtn">derpo</button>
   <div class="dropdown-content">
     <a>Link 1</a>
     <a>Link 2</a>
@@ -142,4 +140,3 @@ td.last {
 
 	}
 </script>
-</body>
