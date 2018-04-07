@@ -4,7 +4,7 @@ title: foodPrep Demo
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
-<table style="width:100%" id="stuff">
+<table style="width: calc(100%/8);" id="stuff">
 	<tr>
 		<th>Time</th>
 		<th>Sunday</th>
