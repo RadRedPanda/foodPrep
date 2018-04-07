@@ -46,15 +46,12 @@ title: foodPrep Demo
 </head>
 <body>
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
-<h2>Hoverable Dropdown</h2>
-<p>Move the mouse over the button to open the dropdown menu.</p>
-
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a>Link 1</a>
+    <a>Link 2</a>
+    <a>Link 3</a>
   </div>
 </div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
