@@ -9,3 +9,7 @@ layout: default
 
 * Bullet lists are also easy to create
 * One more
+
+<center>
+	<h1>text</h1>
+</center>
