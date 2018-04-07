@@ -4,6 +4,28 @@ title: foodPrep Demo
 
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
+<table style="width:100%" id="stuff">
+	<tr>
+		<th>Time</th>
+		<th>Sunday</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+		<th>Saturday</th>
+	</tr>
+	<tr>
+		<th>12:00 AM</th>
+		<th>Sunday</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+		<th>Saturday</th>
+	</tr>
+</table>
 <script>
 	function sendData(data) {
 		var XHR = new XMLHttpRequest();
@@ -22,8 +44,29 @@ title: foodPrep Demo
 
 		// Define what happens on successful data submission
 		XHR.addEventListener('load', function(event) {
-			document.getElementById("butt").textContent=XHR.responseText;
-			alert('Yeah! Data sent and response loaded.');
+			var obj = JSON.parse(XHR.responseText);
+			var day;
+			var hour;
+			var timeTable = new Array(24).fill(new Array(7));
+			tableText = '<tr>
+							<th>Time</th>
+							<th>Sunday</th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+							<th>Saturday</th>
+						</tr>';
+			for(hour=0; hour<timeTable.length; hour++){
+				tableText += '<tr>' + (((hour + 1) % 12) + 1).toString()
+				for(day=1; day<timeTable[hour].length; day++){
+					tableText += '<th></th>';
+				}
+				tableText += '</tr>';
+			}
+			$("#stuff").prepend(tableText);
+			//obj[0][0].name is first food of first day
 		});
 
 		// Define what happens in case of error
