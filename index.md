@@ -48,18 +48,9 @@ title: foodPrep Demo
 			var day;
 			var hour;
 			var timeTable = new Array(24).fill(new Array(7));
-			tableText = '<tr>
-							<th>Time</th>
-							<th>Sunday</th>
-							<th>Monday</th>
-							<th>Tuesday</th>
-							<th>Wednesday</th>
-							<th>Thursday</th>
-							<th>Friday</th>
-							<th>Saturday</th>
-						</tr>';
+			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<timeTable.length; hour++){
-				tableText += '<tr>' + (((hour + 1) % 12) + 1).toString()
+				tableText += '<tr>' + (((hour + 1) % 12) + 1).toString();
 				for(day=1; day<timeTable[hour].length; day++){
 					tableText += '<th></th>';
 				}
