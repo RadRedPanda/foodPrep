@@ -6,14 +6,14 @@ title: foodPrep Demo
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table style="width: 100%;" id="stuff">
 	<tr>
-		<th width="12.5%">Time</th>
-		<th width="12.5%">Sunday</th>
-		<th width="12.5%">Monday</th>
-		<th width="12.5%">Tuesday</th>
-		<th width="12.5%">Wednesday</th>
-		<th width="12.5%">Thursday</th>
-		<th width="12.5%">Friday</th>
-		<th width="12.5%">Saturday</th>
+		<th style="width: calc(100%/8);">Time</th>
+		<th style="width: calc(100%/8);">Sunday</th>
+		<th style="width: calc(100%/8);">Monday</th>
+		<th style="width: calc(100%/8);">Tuesday</th>
+		<th style="width: calc(100%/8);">Wednesday</th>
+		<th style="width: calc(100%/8);">Thursday</th>
+		<th style="width: calc(100%/8);">Friday</th>
+		<th style="width: calc(100%/8);">Saturday</th>
 	</tr>
 	<tr>
 		<th>12:00 AM</th>
