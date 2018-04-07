@@ -50,9 +50,9 @@ title: foodPrep Demo
 			var timeTable = new Array(24).fill(new Array(7));
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<timeTable.length; hour++){
-				tableText += '<tr>' + (((hour + 1) % 12) + 1).toString();
+				tableText += '<tr><th>' + (hour % 12).toString() + "</th>";
 				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<th></th>';
+					tableText += '<th>a</th>';
 				}
 				tableText += '</tr>';
 			}
