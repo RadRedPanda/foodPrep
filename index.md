@@ -76,6 +76,20 @@ title: foodPrep Demo
 	function dropDown(){
 		document.getElementById("dropDownBox").classList.toggle("show");
 	}
+	
+	window.onclick = function(event){
+		if(!event.target.matches('.dropbtn')){
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for(i=0; i<dropdowns.length; i++){
+				var openDropdown = dropdowns[i];
+				if(openDropdown.classList.contains('show')){
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+	
 	function sendData(data) {
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
