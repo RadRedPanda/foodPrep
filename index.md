@@ -47,10 +47,20 @@ title: foodPrep Demo
 			var obj = JSON.parse(XHR.responseText);
 			var day;
 			var hour;
-			var timeTable = new Array(24).fill(new Array(7));
+			var timeTable = new Array(24).fill(new Array(8));
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<timeTable.length; hour++){
-				tableText += '<tr><th>' + (hour % 12).toString() + "</th>";
+				tableText += '<tr><th>';
+				if(hour == 0 || hour == 12){
+					tableText += '12:00 ';
+				}else{
+					tableText += (hour % 12).toString() + ':00 ';
+				}
+				if(hour > 11){
+					tableText += "PM";
+				}else{
+					tableText += "AM";
+				}
 				for(day=1; day<timeTable[hour].length; day++){
 					tableText += '<th>a</th>';
 				}
