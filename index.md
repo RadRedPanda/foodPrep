@@ -38,6 +38,7 @@ title: foodPrep Demo
 
 		// Finally, send our data.
 		XHR.send(urlEncodedData);
-		document.getElementById("butt").textContent=JSON.parse(XHR.responseText);
+		document.getElementById("butt").textContent="HI"
+		alert(JSON.parse(XHR.responseText));
 	}
 </script>
