@@ -6,7 +6,7 @@ title: foodPrep Demo
 <style>
 table{
     table-layout: fixed;
-    width: 800px; 
+    width: 750px; 
 }
 .dropbtn {
     background-color: #4CAF50;
