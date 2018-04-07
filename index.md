@@ -32,9 +32,9 @@ table{
     z-index: 1;
 }
 
-.dropdown-content p {
+.dropdown-content b {
     color: black;
-    padding: 12px 12px;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
@@ -101,7 +101,7 @@ table{
 					tableText += "AM";
 				}
 				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><p>Preparation Time: ' + obj[day-1][0].preptime.toString() + ' minutes</p><p>Hi</p></div></div></th>';
+					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><b>Preparation Time: ' + obj[day-1][0].preptime.toString() + ' minutes</b><b>Hi</b></div></div></th>';
 				}
 				tableText += '</tr>';
 			}
