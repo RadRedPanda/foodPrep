@@ -22,6 +22,7 @@ title: foodPrep Demo
 
 		// Define what happens on successful data submission
 		XHR.addEventListener('load', function(event) {
+			document.getElementById("butt").textContent=XHR.responseText;
 			alert('Yeah! Data sent and response loaded.');
 		});
 
@@ -31,14 +32,13 @@ title: foodPrep Demo
 		});
 
 		// Set up our request
-		XHR.open('GET', 'https://mealplan.mccarty.io/foodplan');
+		XHR.open('POST', 'https://mealplan.mccarty.io/foodplan');
 
 		// Add the required HTTP header for form data POST requests
 		XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		// Finally, send our data.
-		//XHR.send(urlEncodedData);
-		document.getElementById("butt").textContent="."
-		alert(XHR.responseText);
+		XHR.send(urlEncodedData);
+
 	}
 </script>
