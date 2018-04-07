@@ -4,8 +4,10 @@ title: foodPrep Demo
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-table{table-layout:fixed;}
-td{width:1px;white-space:nowrap;}
+table{
+    table-layout: fixed;
+    width: 180px; 
+}
 .dropbtn {
     background-color: #4CAF50;
     color: white;
