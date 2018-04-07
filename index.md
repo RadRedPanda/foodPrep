@@ -101,7 +101,7 @@ table{
 					tableText += "AM";
 				}
 				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><a>Linfsdkjghsd<p></a><a>Link 2</a><a>Link 3</a></div></div></th>';
+					tableText += '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][0].name + '</button><div class="dropdown-content"><a>Preparation Time: ' + obj[day-1][0].prepTime.toString() + ' minutes</a></div></div></th>';
 				}
 				tableText += '</tr>';
 			}
