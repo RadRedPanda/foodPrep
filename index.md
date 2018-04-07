@@ -59,7 +59,7 @@ td{width:1px;white-space:nowrap;}
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table id="stuff">
 	<tr>
-		<th>Time</th>
+		<th>Tikhjkyugyugyume</th>
 		<th>Sunday</th>
 		<th>Monday</th>
 		<th>Tuesday</th>
