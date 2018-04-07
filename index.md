@@ -56,7 +56,8 @@ title: foodPrep Demo
 				}
 				tableText += '</tr>';
 			}
-			$("#stuff").prepend(tableText);
+			var myTable = document.getElementById('myTable');
+			myTable.innerHTML = tableText;
 			//obj[0][0].name is first food of first day
 		});
 
