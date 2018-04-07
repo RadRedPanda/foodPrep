@@ -1,6 +1,8 @@
 ---
-title: foodPrep
+title: foodPrep Demo
 ---
+
+<h1>foodPrep</h1><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <script>
 	function sendData(data) {
