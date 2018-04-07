@@ -24,6 +24,7 @@ table{
 .dropdown-content {
     display: none;
     position: absolute;
+	white-space: nowrap;
 	right: 0;
     background-color: #f1f1f1;
     min-width: 160px;
