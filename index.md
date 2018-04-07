@@ -32,7 +32,7 @@ table{
     z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown-content p {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
