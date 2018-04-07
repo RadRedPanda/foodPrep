@@ -31,14 +31,14 @@ title: foodPrep Demo
 		});
 
 		// Set up our request
-		XHR.open('POST', 'https://mealplan.mccarty.io/foodplan');
+		XHR.open('GET', 'https://mealplan.mccarty.io/foodplan');
 
 		// Add the required HTTP header for form data POST requests
 		XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		// Finally, send our data.
-		XHR.send(urlEncodedData);
-		document.getElementById("butt").textContent="HI"
+		//XHR.send(urlEncodedData);
+		document.getElementById("butt").textContent="."
 		alert(JSON.parse(XHR.responseText));
 	}
 </script>
