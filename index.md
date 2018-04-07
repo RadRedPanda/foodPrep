@@ -1,59 +1,63 @@
 ---
 title: foodPrep Demo
 ---
-(setq markdown-xhtml-header-content
-      "<style type='text/css'>
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-</style>")
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
 <h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
+<h2>Hoverable Dropdown</h2>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
 <div class="dropdown">
-	<button type="button" onclick="dropDown()" id = "butt">Click Me Too!</button>
-	<div id="dropDownBox" class="dropdown-content">
-		<a>1</a>
-	</div>
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
 </div>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
-<style type="text/css" media="screen">
-	.dropbtn {
-		background-color: #3498DB;
-		color: white;
-		padding: 16px;
-		font-size: 16px;
-		border: none;
-		cursor: pointer;
-	}
-
-	.dropbtn:hover, .dropbtn:focus {
-		background-color: #2980B9;
-	}
-
-	.dropdown {
-		position: relative;
-		display: inline-block;
-	}
-
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #f1f1f1;
-		min-width: 160px;
-		overflow: auto;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-	}
-
-	.dropdown-content a {
-		color: black;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-	}
-
-	.dropdown a:hover {background-color: #ddd}
-
-	.show {display:block;}
-</style>
 <table style="width: 100%;" id="stuff">
 	<tr>
 		<th>Time</th>
@@ -77,23 +81,6 @@ a:hover { text-decoration: underline; }
 	</tr>
 </table>
 <script>
-	function dropDown(){
-		document.getElementById("dropDownBox").classList.toggle("show");
-	}
-	
-	window.onclick = function(event){
-		if(!event.target.matches('.dropbtn')){
-			var dropdowns = document.getElementsByClassName("dropdown-content");
-			var i;
-			for(i=0; i<dropdowns.length; i++){
-				var openDropdown = dropdowns[i];
-				if(openDropdown.classList.contains('show')){
-					openDropdown.classList.remove('show');
-				}
-			}
-		}
-	}
-	
 	function sendData(data) {
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
@@ -154,3 +141,4 @@ a:hover { text-decoration: underline; }
 
 	}
 </script>
+</body>
