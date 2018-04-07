@@ -1,9 +1,10 @@
 <html lang="en-US"><center>
 	<head>
-		<title>foodPrep</title>
+		<title>foodPrep Demo</title>
 	</head>
 	<body>
-	<button type="button" onclick="sendData({test:'ok'})">Click Me!</button>
+		<h1>foodPrep</h1>
+		<button type="button" onclick="sendData({test:'ok'})">Click Me!</button>
 		<script>
 			function sendData(data) {
 			  var XHR = new XMLHttpRequest();
@@ -27,7 +28,7 @@
 
 			  // Define what happens in case of error
 			  XHR.addEventListener('error', function(event) {
-				alert('Oops! Something goes wrong.');
+				alert('Oops! Something went wrong.');
 			  });
 
 			  // Set up our request
