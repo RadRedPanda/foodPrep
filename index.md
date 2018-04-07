@@ -1,19 +1,8 @@
-<html lang="en-US">
-	<head>
-		<title>foodPrep Demo</title>
-	</head>
-	<body>
-		<div id="header">
-			<table cellpadding = "0" cellspacing = "0" border = "0">
-				<tbody>
-					<tr>
-						<td width = "156" rowspan = "3">
-							<h1 style = "font-family:courier;">foodPrep</h1><p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+---
+title: foodPrep Demo
+---
+
+<h1 style = "font-family:courier;">foodPrep</h1><p>
 		<button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 		<script>
 			function sendData(data) {
@@ -52,5 +41,3 @@
 				document.getElementById("butt").textContent=JSON.parse(XHR.responseText);
 			}
 		</script>
-	</body>
-</html>
