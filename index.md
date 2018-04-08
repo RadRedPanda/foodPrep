@@ -110,7 +110,6 @@ table{
 			var day;
 			var hour;
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
-			alert(JSON.stringify(timeTable));
 			for(hour=0; hour<24; hour++){
 				tableText += '<tr><td>';
 				if(hour == 0 || hour == 12){
@@ -156,6 +155,7 @@ table{
 					}
 				}
 			}
+			alert(JSON.stringify(timeTable));
 			var data = JSON.stringify(rawData);
 			var XHR = new XMLHttpRequest();
 
