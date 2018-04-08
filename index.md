@@ -124,7 +124,7 @@ table{
 				for(day=1; day<8; day++){
 					tableText += '<td><input type="number" id="';
 					tableText += day.toString() + ',' + hour.toString();
-					tableText += '" value="' + timeTable[hour][day-1].toString() + '" class="textInputs"/></td>';
+					tableText += '" value="' + timeTable[hour][day-1] + '" class="textInputs"/></td>';
 				}
 				tableText += '</tr>';
 			}
@@ -140,7 +140,7 @@ table{
 			for(hour = 0; hour < 24; hour++){
 				for(day = 1; day < 8; day++){
 					cell = document.getElementById(day.toString() + ',' + hour.toString());
-					if(cell.value > 0){
+					if(parseInt(cell.value) > 0){
 						timeTable[hour][day-1] = cell.value;
 						array = {
 							start: hour,
