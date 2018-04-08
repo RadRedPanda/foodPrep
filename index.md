@@ -143,7 +143,7 @@ table{
 				for(day = 1; day < 8; day++){
 					cell = document.getElementById(day.toString() + ',' + hour.toString());
 					if(parseInt(cell.value) > 0){
-						timeTable[hour][day-1] = cell.value;
+						timeTable[hour][day-1] = parseInt(cell.value);
 						array = {
 							start: hour,
 							time: parseInt(cell.value),
