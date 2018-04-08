@@ -14,7 +14,7 @@ table{
     padding: 16px;
     font-size: 16px;
     border: none;
-	width: 650px;
+	width: 80px;
 }
 
 .dropdown {
