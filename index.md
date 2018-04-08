@@ -11,11 +11,11 @@ table{
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 16px;
+    padding: 2px;
     font-size: 16px;
     border: none;
 	width: 80px;
-	height: 30px;
+	height: 20px;
 	white-space: nowrap;
 }
 
