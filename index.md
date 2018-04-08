@@ -15,6 +15,7 @@ table{
     font-size: 16px;
     border: none;
 	width: 80px;
+	height: 30px;
 	white-space: nowrap;
 }
 
