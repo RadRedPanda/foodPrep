@@ -107,9 +107,22 @@ table{
 			}
 			var myTable = document.getElementById('stuff');
 			myTable.innerHTML = tableText;
-			for(day = 1; day<timeTable[0].length; day++){
+			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
-					myTable.rows[obj[day-1][hour].time].cells[day].innerHTML = '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][hour].name + '</button><div class="dropdown-content"><b>Preparation Time: ' + obj[day-1][hour].preptime.toString() + ' minutes</b><b>fdadsfwerfa</b></div></div></th>';
+					tableText = '<th><div class="dropdown"><button class="dropbtn">';
+					tableText += obj[day-1][hour].name;
+					tableText += '</button><div class="dropdown-content">';
+					tableText += '<b>Preparation Time: ';
+					tableText += obj[day-1][hour].preptime.toString();
+					tableText += ' minutes</b><b>Ingredients:</b><b>';
+					var numIng;
+					for(numIng = 0; numIng < obj[day-1][hour].contains.length; numIng++){
+						tableText += '&emsp;';
+						tableText += obj[day-1][hour].contains[numIng];
+						tableText += '</b><b>'
+					}
+					tableText += 'fdadsfwerfa</b></div></div></th>';
+					myTable.rows[obj[day-1][hour].time].cells[day].innerHTML = tableText;
 				}
 			}
 		});
