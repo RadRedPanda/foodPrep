@@ -156,7 +156,6 @@ table{
 					timeTable[hour][day-1] = parseInt(cell.value);
 				}
 			}
-			alert(JSON.stringify(timeTable));
 			var data = JSON.stringify(rawData);
 			var XHR = new XMLHttpRequest();
 
