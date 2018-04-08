@@ -58,7 +58,7 @@ table{
 </head>
 <body>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
+<button type="button" onclick="sendData()" id = "butt">Click Me!</button>
 <table id="stuff">
 </table>
 <script>
@@ -88,8 +88,8 @@ table{
 	var myTable = document.getElementById('stuff');
 	myTable.innerHTML = tableText;
 
-	function sendData(data) {
-	/*	var data = [];
+	function sendData() {
+		var rawData;
 		var day;
 		var hour;
 		var cell;
@@ -103,11 +103,11 @@ table{
 						time: cell.value,
 						day: day-1
 					};
-					data.push(array);
+					rawData.push(array);
 				}
 			}
-		}*/
-		alert(data);
+		}
+		var data = {data: JSON.stringify(rawData)};
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
 		var urlEncodedDataPairs = [];
