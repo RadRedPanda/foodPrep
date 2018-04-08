@@ -74,7 +74,7 @@ table{
 <body>
 <a href="/foodPrep/about">About</a>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<center><button type="button" onclick="sendData()" id = "butt">Generate schedule!</button></center>
+<button type="button" onclick="sendData()" id = "butt">Generate schedule!</button>
 <table id="stuff">
 </table>
 <script>
