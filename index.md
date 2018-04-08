@@ -121,15 +121,19 @@ table{
 		tableText = '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
 		tableText += '<center><b>' + foodPrepArray[hour][day-1][index].name + '</b></center>';
 		tableText += '<b>Preparation Time: ';
-		tableText += foodPrepArray[hour][day-1][index].preptime.toString();
-		tableText += ' minutes</b><b>Ingredients:</b>';
+		tableText += foodPrepArray[hour][day-1][index].preptime.toString() + ' minutes</b>';
+		if(foodPrepArray[hour][day-1][index].ingredients.length > 0){
+			tableText += '<b>Ingredients:</b>';
+		}
 		var numIng;
 		for(numIng = 0; numIng < foodPrepArray[hour][day-1][index].ingredients.length; numIng++){
 			tableText += '<b>&emsp;&#8226;';
 			tableText += foodPrepArray[hour][day-1][index].ingredients[numIng].name;
 			tableText += '</b>';
 		}
-		tableText += '<b>Steps:</b>';
+		if(foodPrepArray[hour][day-1][index].steps.length > 0){
+			tableText += '<b>Steps:</b>';
+		}
 		var numStep;
 		for(numStep = 0; numStep < foodPrepArray[hour][day-1][index].steps.length; numStep++){
 			tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
