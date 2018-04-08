@@ -242,7 +242,7 @@ table{
 						}else{
 							tableText = '<td><div class="dropdown"><button class="dropbtn">';
 							//tableText += obj[day-1][hour].name;
-							tableText += '<select style="width: 84px" id="' + day.toString() + ',' + obj[day-1][hour].time.toString() + 'select"><center><div class="truncated"><option onmouseover="hoverFood(day, hour, 0)">' + obj[day-1][hour].name + '</option></select>';
+							tableText += '<select onchange="hoverFood(' + (day-1).toString()+ ', ' + obj[day-1][hour].time.toString() + ', this.selectedIndex);" style="width: 84px" id="' + day.toString() + ',' + obj[day-1][hour].time.toString() + 'select"><center><div class="truncated"><option>' + obj[day-1][hour].name + '</option></select>';
 							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
 							tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 							tableText += '<b>Preparation Time: ';
