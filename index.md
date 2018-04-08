@@ -142,7 +142,7 @@ table{
 			for(hour = 0; hour < 24; hour++){
 				for(day = 1; day < 8; day++){
 					cell = document.getElementById(day.toString() + ',' + hour.toString());
-					if(cell.value > 0){
+					if(parseInt(cell.value) > 0){
 						timeTable[hour][day-1] = cell.value;
 						array = {
 							start: hour,
