@@ -117,7 +117,7 @@ table{
 	}
 	
 	function hoverFood(day, hour, index){
-		dropDownBox = document.getElementById((day-1).toString() + ',' + hour.toString() + 'drop');
+		dropDownBox = document.getElementById(day.toString() + ',' + hour.toString() + 'drop');
 		tableText = '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
 		tableText += '<center><b>' + foodPrepArray[hour][day-1][index].name + '</b></center>';
 		tableText += '<b>Preparation Time: ';
