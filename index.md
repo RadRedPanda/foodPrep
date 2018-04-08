@@ -20,13 +20,19 @@ table{
     text-overflow: ellipsis;
 }
 
+.empty {
+	background-color: #FF3333;
+	width: 83px;
+	height:20px;
+}
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 2px;
     font-size: 16px;
     border: none;
-	width: 80px;
+	width: 83px;
 	height: 20px;
     white-space: nowrap;
 }
@@ -122,7 +128,28 @@ table{
 			var obj = JSON.parse(XHR.responseText);
 			var day;
 			var hour;
+			var timeTable = new Array(24).fill(new Array(8));
+			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
+			for(hour=0; hour<timeTable.length; hour++){
+				tableText += '<tr><th>';
+				if(hour == 0 || hour == 12){
+					tableText += '12:00 ';
+				}else{
+					tableText += (hour % 12).toString() + ':00 ';
+				}
+				if(hour > 11){
+					tableText += "PM";
+				}else{
+					tableText += "AM";
+				}
+				for(day=1; day<timeTable[hour].length; day++){
+					tableText += '<th><div class="empty"></div></th>';
+				}
+				tableText += '</tr>';
+			}
 			var myTable = document.getElementById('stuff');
+			myTable.innerHTML = tableText;
+		
 			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
 					tableText = '<th><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
