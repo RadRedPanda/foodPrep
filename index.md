@@ -105,7 +105,7 @@ table{
 				}
 			}
 		}
-		var data = {JSON.stringify(rawData)};
+		var data = JSON.stringify(rawData);
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
 		var urlEncodedDataPairs = [];
