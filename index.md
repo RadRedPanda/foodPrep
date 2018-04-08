@@ -69,6 +69,9 @@ table{
 	</tr>
 </table>
 <script>
+	var day;
+	var hour;
+	var timeTable = new Array(24).fill(new Array(8));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<timeTable.length; hour++){
 		tableText += '<tr><th>';
