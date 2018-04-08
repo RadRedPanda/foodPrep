@@ -99,9 +99,9 @@ table{
 				cell = document.getElementById(day.toString() + ',' + hour.toString());
 				if(cell.value > 0){
 					array = {
-						array.start = hour,
-						array.time = cell.value,
-						array.day = day-1
+						start: hour,
+						time: cell.value,
+						day: day-1
 					};
 					rawData.push(array);
 				}
