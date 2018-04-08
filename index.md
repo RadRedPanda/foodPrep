@@ -22,7 +22,7 @@ table{
 
 .empty {
 	background-color: #FF3333;
-	width: 86px;
+	width: 87px;
 	height:21px;
 }
 
@@ -32,7 +32,7 @@ table{
     padding: 2px;
     font-size: 16px;
     border: none;
-	width: 86px;
+	width: 87px;
 	height: 21px;
     white-space: nowrap;
 }
