@@ -69,6 +69,27 @@ table{
 	</tr>
 </table>
 <script>
+	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
+	for(hour=0; hour<timeTable.length; hour++){
+		tableText += '<tr><th>';
+		if(hour == 0 || hour == 12){
+			tableText += '12:00 ';
+		}else{
+			tableText += (hour % 12).toString() + ':00 ';
+		}
+		if(hour > 11){
+			tableText += "PM";
+		}else{
+			tableText += "AM";
+		}
+		for(day=1; day<timeTable[hour].length; day++){
+			tableText += '<th>None</th>';
+		}
+		tableText += '</tr>';
+	}
+	var myTable = document.getElementById('stuff');
+	myTable.innerHTML = tableText;
+
 	function sendData(data) {
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
@@ -87,7 +108,7 @@ table{
 		// Define what happens on successful data submission
 		XHR.addEventListener('load', function(event) {
 			var obj = JSON.parse(XHR.responseText);
-			var day;
+			/*var day;
 			var hour;
 			var timeTable = new Array(24).fill(new Array(8));
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
@@ -107,9 +128,9 @@ table{
 					tableText += '<th>None</th>';
 				}
 				tableText += '</tr>';
-			}
+			}*/
 			var myTable = document.getElementById('stuff');
-			myTable.innerHTML = tableText;
+			//myTable.innerHTML = tableText;
 			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
 					tableText = '<th><div class="dropdown"><button class="dropbtn"><center>';
