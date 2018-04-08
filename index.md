@@ -241,13 +241,12 @@ table{
 							var optionSelect = document.getElementById(day.toString() + ',' + obj[day-1][hour].time.toString() + 'select');
 							var opt = document.createElement("option");
 							opt.text = obj[day-1][hour].name;
-							opt.onmouseover = "hoverFood(day, hour, 0)";
 							optionSelect.add(opt);
 						}else{
 							tableText = '<td><div class="dropdown"><button class="dropbtn">';
 							//tableText += obj[day-1][hour].name;
 							tableText += '<select onchange="hoverFood(' + day.toString()+ ', ' + obj[day-1][hour].time.toString() + ', this.selectedIndex);" style="width: 84px" id="' + day.toString() + ',' + obj[day-1][hour].time.toString() + 'select"><center><div class="truncated"><option>' + obj[day-1][hour].name + '</option></select>';
-							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
+							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + obj[day-1][hour].time.toString() + 'drop">';
 							tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 							tableText += '<b>Preparation Time: ';
 							tableText += obj[day-1][hour].preptime.toString() + ' minutes</b>';
