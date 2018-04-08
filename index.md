@@ -115,6 +115,7 @@ table{
 					tableText = '<th><div class="dropdown"><button class="dropbtn"><center>';
 					tableText += obj[day-1][hour].name;
 					tableText += '</center></button><div class="dropdown-content">';
+					tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 					tableText += '<b>Preparation Time: ';
 					tableText += obj[day-1][hour].preptime.toString();
 					tableText += ' minutes</b><b>Ingredients:</b>';
