@@ -119,21 +119,21 @@ table{
 	function hoverFood(day, hour, index){
 		dropDownBox = document.getElementById((day-1).toString() + ',' + hour.toString() + 'drop');
 		tableText = '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
-		tableText += '<center><b>' + foodPrepArray[hour][day][index].name + '</b></center>';
+		tableText += '<center><b>' + foodPrepArray[hour][day-1][index].name + '</b></center>';
 		tableText += '<b>Preparation Time: ';
-		tableText += foodPrepArray[hour][day][index].preptime.toString();
+		tableText += foodPrepArray[hour][day-1][index].preptime.toString();
 		tableText += ' minutes</b><b>Ingredients:</b>';
 		var numIng;
-		for(numIng = 0; numIng < foodPrepArray[hour][day][index].ingredients.length; numIng++){
+		for(numIng = 0; numIng < foodPrepArray[hour][day-1][index].ingredients.length; numIng++){
 			tableText += '<b>&emsp;&#8226;';
-			tableText += foodPrepArray[hour][day][index].ingredients[numIng].name;
+			tableText += foodPrepArray[hour][day-1][index].ingredients[numIng].name;
 			tableText += '</b>';
 		}
 		tableText += '<b>Steps:</b>';
 		var numStep;
-		for(numStep = 0; numStep < foodPrepArray[hour][day][index].steps.length; numStep++){
+		for(numStep = 0; numStep < foodPrepArray[hour][day-1][index].steps.length; numStep++){
 			tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
-			tableText += foodPrepArray[hour][day][index].steps[numStep];
+			tableText += foodPrepArray[hour][day-1][index].steps[numStep];
 			tableText += '</b>';
 		}
 		
