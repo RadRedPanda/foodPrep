@@ -22,8 +22,8 @@ table{
 
 .empty {
 	background-color: #FF3333;
-	width: 86px;
-	height:23px;
+	width: 85px;
+	height: 23px;
 }
 
 .dropbtn {
@@ -32,7 +32,7 @@ table{
     padding: 2px;
     font-size: 16px;
     border: none;
-	width: 86px;
+	width: 85px;
 	height: 23px;
     white-space: nowrap;
 }
