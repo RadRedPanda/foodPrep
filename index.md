@@ -21,7 +21,7 @@ table{
 }
 
 .empty {
-	background-color: #BB3333;
+	background-color: #BB1111;
 	width: 84px;
 	height: 23px;
 }
