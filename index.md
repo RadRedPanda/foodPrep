@@ -143,16 +143,14 @@ table{
 				for(day = 1; day < 8; day++){
 					cell = document.getElementById(day.toString() + ',' + hour.toString());
 					if(parseInt(cell.value) > 0){
-						timeTable[hour][day-1] = parseInt(cell.value);
 						array = {
 							start: hour,
 							time: parseInt(cell.value),
 							day: day-1
 						};
 						rawData.push(array);
-					}else{
-						timeTable[hour][day-1] = 0;
 					}
+					timeTable[hour][day-1] = parseInt(cell.value);
 				}
 			}
 			alert(JSON.stringify(timeTable));
