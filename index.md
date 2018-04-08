@@ -104,6 +104,9 @@ table{
 	myTable.innerHTML = tableText;
 
 	function sendData() {
+		if(document.getElementById('1,1') == null){
+			return;
+		}
 		var rawData = [];
 		var day;
 		var hour;
