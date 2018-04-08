@@ -70,7 +70,7 @@ table{
 </style>
 </head>
 <body>
-<a href="/about">About</a>
+<a href="/foodPrep/about">About</a>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
 <button type="button" onclick="sendData()" id = "butt">Generate Schedule!</button>
 <table id="stuff">
