@@ -121,7 +121,7 @@ table{
 					tableText += ' minutes</b><b>Ingredients:</b>';
 					var numIng;
 					for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
-						tableText += '<b>&emsp;';
+						tableText += '<b>&emsp;&#8226;';
 						tableText += obj[day-1][hour].ingredients[numIng].name;
 						tableText += '</b>';
 					}
