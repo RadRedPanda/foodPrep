@@ -47,8 +47,6 @@ table{
     display: block;
 }
 
-//.dropdown-content a:hover {background-color: #ddd}
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -60,7 +58,7 @@ table{
 </head>
 <body>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
+<button type="button" onclick="sendData()" id = "butt">Click Me!</button>
 <table id="stuff">
 </table>
 <script>
@@ -90,7 +88,24 @@ table{
 	var myTable = document.getElementById('stuff');
 	myTable.innerHTML = tableText;
 
-	function sendData(data) {
+	function sendData() {
+		var rawData = {};
+		var day;
+		var hour;
+		var cell;
+		var array;
+		for(hour = 0; hour < 24; hour++){
+			for(day = 1; day < 8; day++){
+				cell = document.getElementById(day.toString() + ',' + hour.toString());
+				if(cell.value > 0){
+					array.start = hour;
+					array.time = cell.value;
+					array.day = day-1;
+					rawData.push(array);
+				}
+			}
+		}
+		var data = {JSON.stringify(rawData)};
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
 		var urlEncodedDataPairs = [];
