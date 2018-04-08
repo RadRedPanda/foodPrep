@@ -234,7 +234,7 @@ table{
 					for(hour = 0; hour < obj[day-1].length; hour++){
 						foodPrepArray[obj[day-1][hour].time][day-1].push(obj[day-1][hour]);
 						if(foodPrepArray[obj[day-1][hour].time][day-1].length > 1){
-							var optionSelect = document.getElementById(day.toString() + ',' + hour.toString() + 'select');
+							var optionSelect = document.getElementById(day.toString() + ',' + obj[day-1][hour].time.toString() + 'select');
 							var opt = document.createElement("option");
 							opt.text = obj[day-1][hour].name;
 							opt.onmouseover = "hoverFood(day, hour, 0)";
@@ -242,7 +242,7 @@ table{
 						}else{
 							tableText = '<td><div class="dropdown"><button class="dropbtn">';
 							//tableText += obj[day-1][hour].name;
-							tableText += '<select style="width: 84px" id="' + day.toString() + ',' + hour.toString() + 'select"><center><div class="truncated"><option onmouseover="hoverFood(day, hour, 0)">' + obj[day-1][hour].name + '</option></select>';
+							tableText += '<select style="width: 84px" id="' + day.toString() + ',' + obj[day-1][hour].time.toString() + 'select"><center><div class="truncated"><option onmouseover="hoverFood(day, hour, 0)">' + obj[day-1][hour].name + '</option></select>';
 							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
 							tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 							tableText += '<b>Preparation Time: ';
