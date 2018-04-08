@@ -80,7 +80,7 @@ table{
 	var timeTable = new Array(24).fill(new Array(8));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<timeTable.length; hour++){
-		tableText += '<tr><th><right>';
+		tableText += '<tr><th align="right">';
 		if(hour == 0 || hour == 12){
 			tableText += '12:00 ';
 		}else{
@@ -91,7 +91,7 @@ table{
 		}else{
 			tableText += 'AM';
 		}
-		tableText += '</right></th>';
+		tableText += '</th>';
 		for(day=1; day<timeTable[hour].length; day++){
 			tableText += '<th><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
