@@ -238,6 +238,7 @@ table{
 							var opt = document.createElement("option");
 							opt.text = obj[day-1][hour].name;
 							opt.onmouseover = "hoverFood(day, hour, 0)";
+							optionSelect.add(opt);
 						}else{
 							tableText = '<td><div class="dropdown"><button class="dropbtn">';
 							//tableText += obj[day-1][hour].name;
