@@ -13,18 +13,22 @@ table{
 	width: 80px;
 }
 
+.truncated {
+    display: block;
+    white-space: nowrap; /* forces text to single line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 2px 20px 2px 2px;
+    padding: 2px 20px;
     font-size: 16px;
     border: none;
 	width: 80px;
 	height: 20px;
-    display: block;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .dropdown {
@@ -121,9 +125,9 @@ table{
 			var myTable = document.getElementById('stuff');
 			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
-					tableText = '<th><div class="dropdown"><button class="dropbtn"><center>';
+					tableText = '<th><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
 					tableText += obj[day-1][hour].name;
-					tableText += '</center></button><div class="dropdown-content">';
+					tableText += '</div></center></button><div class="dropdown-content">';
 					tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 					tableText += '<b>Preparation Time: ';
 					tableText += obj[day-1][hour].preptime.toString();
