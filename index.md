@@ -30,7 +30,6 @@ table{
 
 .dropbtn {
     background-color: #4CAF50;
-    color: white;
     padding: 0px;
     font-size: 16px;
     border: none;
