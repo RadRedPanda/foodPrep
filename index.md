@@ -188,9 +188,9 @@ table{
 			
 				for(day = 1; day < 8; day++){
 					for(hour = 0; hour < obj[day-1].length; hour++){
-						tableText = '<td><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
+						tableText = '<td><div class="dropdown">';//       <button class="dropbtn"><center><div class="truncated">';
 						//tableText += obj[day-1][hour].name;
-						tableText += '<select style="width: 280px" id="Mobility" name="Mobility"><option selected="">Please Select</option><option>K</option><option>1</option></select>';
+						tableText += '<select style="width: 84px" id=""><center><div class="truncated"><option selected="" class="dropbtn">' + obj[day-1][hour].name + '</option></select>';
 						tableText += '</div></center></button><div class="dropdown-content">';
 						tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 						tableText += '<b>Preparation Time: ';
