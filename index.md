@@ -14,12 +14,12 @@ table{
     padding: 16px;
     font-size: 16px;
     border: none;
+	width: 650px;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
-	width: 650px;
 }
 
 .dropdown-content {
