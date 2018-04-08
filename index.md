@@ -250,15 +250,19 @@ table{
 							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
 							tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
 							tableText += '<b>Preparation Time: ';
-							tableText += obj[day-1][hour].preptime.toString();
-							tableText += ' minutes</b><b>Ingredients:</b>';
+							tableText += obj[day-1][hour].preptime.toString() + ' minutes</b>';
+							if(obj[day-1][hour].ingredients.length > 0){
+								tableText += '<b>Ingredients:</b>';
+							}
 							var numIng;
 							for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
 								tableText += '<b>&emsp;&#8226;';
 								tableText += obj[day-1][hour].ingredients[numIng].name;
 								tableText += '</b>';
 							}
+							if(obj[day-1][hour].steps.length > 0){
 							tableText += '<b>Steps:</b>';
+							}
 							var numStep;
 							for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
 								tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
