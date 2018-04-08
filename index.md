@@ -256,7 +256,7 @@ table{
 							}
 							var numIng;
 							for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
-								tableText += '<b>&emsp;&#8226;';
+								tableText += '<b>&#8226;';
 								tableText += obj[day-1][hour].ingredients[numIng].name;
 								tableText += '</b>';
 							}
@@ -265,7 +265,7 @@ table{
 							}
 							var numStep;
 							for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
-								tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
+								tableText += '<b>' + (numStep + 1).toString() + ': ';
 								tableText += obj[day-1][hour].steps[numStep];
 								tableText += '</b>';
 							}
