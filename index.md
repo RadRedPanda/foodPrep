@@ -70,6 +70,25 @@ table{
 </style>
 </head>
 <body>
+
+<select style="width: 280px" id="Mobility" name="Mobility">
+  <option selected="">Please Select</option>
+  <option>K</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
+</select>
+
+
 <a href="/foodPrep/about">About</a>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
 <button type="button" onclick="sendData()" id = "butt">Generate schedule!</button>
