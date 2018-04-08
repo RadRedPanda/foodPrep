@@ -78,7 +78,7 @@ table{
 <script>
 	var day;
 	var hour;
-	var timeTable = new Array(24).fill(new Array(7));
+	var timeTable = [];
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<24; hour++){
 		tableText += '<tr><td>';
@@ -93,11 +93,14 @@ table{
 			tableText += 'AM';
 		}
 		tableText += '</td>';
+		var tempArr = [];
 		for(day=1; day<8; day++){
 			tableText += '<td><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
 			tableText += '" value="0" class="textInputs"/></td>';
+			tempArr.push(0);
 		}
+		timeTable.push(tempArr);
 		tableText += '</tr>';
 	}
 	var myTable = document.getElementById('stuff');
