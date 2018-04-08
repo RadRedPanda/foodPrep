@@ -169,7 +169,7 @@ table{
 		XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		// Finally, send our data.
-		XHR.send(urlEncodedData);
+		XHR.send(data);
 
 	}
 </script>
