@@ -169,7 +169,15 @@ table{
 				tableText += '</tr>';
 			}
 			var myTable = document.getElementById('stuff');
-			myTable.innerHTML = tableText;		
+			myTable.innerHTML = tableText;
+			for(hour=0; hour<24; hour++){
+				var foodTempArray = [];
+				for(day=0; day<7; day++){
+					var inception = [];
+					foodTempArray.push(inception);
+				}
+				foodPrepArray.push(foodTempArray);
+			}
 		}else{
 			buttonId.innerHTML = 'Edit schedule!';
 			var rawData = [];
