@@ -116,9 +116,9 @@ table{
 					tableText += obj[day-1][hour].preptime.toString();
 					tableText += ' minutes</b><b>Ingredients:</b>';
 					var numIng;
-					for(numIng = 0; numIng < obj[day-1][hour].contains.length; numIng++){
+					for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
 						tableText += '<b>&emsp;';
-						tableText += obj[day-1][hour].contains[numIng];
+						tableText += obj[day-1][hour].ingredients[numIng];
 						tableText += '</b>';
 					}
 					tableText += '<b>Steps:</b>';
