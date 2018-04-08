@@ -89,7 +89,7 @@ table{
 	myTable.innerHTML = tableText;
 
 	function sendData() {
-		var rawData;
+		var rawData = [];
 		var day;
 		var hour;
 		var cell;
