@@ -105,7 +105,7 @@ table{
 
 	function sendData() {
 		var buttonId = document.getElementById('butt');
-		if(buttonId.innerHTML == 'Edit Schedule!'){
+		if(buttonId.innerHTML == 'Edit schedule!'){
 			buttonId.innerHTML = 'Generate schedule!';
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<24; hour++){
