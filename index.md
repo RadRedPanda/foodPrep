@@ -80,7 +80,7 @@ table{
 	var timeTable = new Array(24).fill(new Array(8));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<timeTable.length; hour++){
-		tableText += '<tr><th align="right">';
+		tableText += '<tr><td align="right">';
 		if(hour == 0 || hour == 12){
 			tableText += '12:00 ';
 		}else{
@@ -91,11 +91,11 @@ table{
 		}else{
 			tableText += 'AM';
 		}
-		tableText += '</th>';
+		tableText += '</td>';
 		for(day=1; day<timeTable[hour].length; day++){
-			tableText += '<th><input type="number" id="';
+			tableText += '<td><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
-			tableText += '" value="0" class="textInputs"/></th>';
+			tableText += '" value="0" class="textInputs"/></td>';
 		}
 		tableText += '</tr>';
 	}
@@ -132,7 +132,7 @@ table{
 			var timeTable = new Array(24).fill(new Array(8));
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<timeTable.length; hour++){
-				tableText += '<tr><th>';
+				tableText += '<tr><td align="right">';
 				if(hour == 0 || hour == 12){
 					tableText += '12:00 ';
 				}else{
@@ -143,8 +143,9 @@ table{
 				}else{
 					tableText += "AM";
 				}
+				tableText += '</td>';
 				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<th><div class="empty"></div></th>';
+					tableText += '<td><div class="empty"></div></td>';
 				}
 				tableText += '</tr>';
 			}
@@ -153,7 +154,7 @@ table{
 		
 			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
-					tableText = '<th><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
+					tableText = '<td><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
 					tableText += obj[day-1][hour].name;
 					tableText += '</div></center></button><div class="dropdown-content">';
 					tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
@@ -174,7 +175,7 @@ table{
 						tableText += '</b>';
 					}
 					
-					tableText += '</div></div></th>';
+					tableText += '</div></div></td>';
 					myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
 				}
 			}
