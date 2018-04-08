@@ -106,6 +106,41 @@ table{
 	var myTable = document.getElementById('stuff');
 	myTable.innerHTML = tableText;
 
+	var foodPrepArray = [];
+	for(hour=0; hour<24; hour++){
+		var foodTempArray = [];
+		for(day=0; day<7; day++){
+			var inception = [];
+			foodTempArray.push(inception);
+		}
+		foodPrepArray.push(foodTempArray);
+	}
+	
+	function hoverFood(day, hour, index){
+		dropDownBox = document.getElementById(day.toString() + ',' + hour.toString() + 'drop');
+		tableText = '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
+		tableText += '<center><b>' + foodPrepArray[hour][day][index].name + '</b></center>';
+		tableText += '<b>Preparation Time: ';
+		tableText += foodPrepArray[hour][day][index].preptime.toString();
+		tableText += ' minutes</b><b>Ingredients:</b>';
+		var numIng;
+		for(numIng = 0; numIng < foodPrepArray[hour][day][index].ingredients.length; numIng++){
+			tableText += '<b>&emsp;&#8226;';
+			tableText += foodPrepArray[hour][day][index].ingredients[numIng].name;
+			tableText += '</b>';
+		}
+		tableText += '<b>Steps:</b>';
+		var numStep;
+		for(numStep = 0; numStep < foodPrepArray[hour][day][index].steps.length; numStep++){
+			tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
+			tableText += foodPrepArray[hour][day][index].steps[numStep];
+			tableText += '</b>';
+		}
+		
+		tableText += '</div></div></td>';
+		dropDownBox.innerHTML = tableText;
+	}
+	
 	function sendData() {
 		var buttonId = document.getElementById('butt');
 		if(buttonId.innerHTML == 'Edit schedule!'){
@@ -188,30 +223,38 @@ table{
 			
 				for(day = 1; day < 8; day++){
 					for(hour = 0; hour < obj[day-1].length; hour++){
-						tableText = '<td><div class="dropdown">';//       <button class="dropbtn"><center><div class="truncated">';
-						//tableText += obj[day-1][hour].name;
-						tableText += '<select style="width: 84px" id=""><center><div class="truncated"><option selected="" class="dropbtn">' + obj[day-1][hour].name + '</option></select>';
-						tableText += '</div></center></button><div class="dropdown-content">';
-						tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
-						tableText += '<b>Preparation Time: ';
-						tableText += obj[day-1][hour].preptime.toString();
-						tableText += ' minutes</b><b>Ingredients:</b>';
-						var numIng;
-						for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
-							tableText += '<b>&emsp;&#8226;';
-							tableText += obj[day-1][hour].ingredients[numIng].name;
-							tableText += '</b>';
+						foodPrepArray[obj[day-1][hour].time][day-1].push(obj[day-1][hour]);
+						if(foodPrepArray[obj[day-1][hour].time][day-1].length > 1){
+							var optionSelect = document.getElementById(day.toString() + ',' + hour.toString() + 'select');
+							var opt = document.createElement("option");
+							opt.text = obj[day-1][hour].name;
+							opt.onmouseover = "hoverFood(day, hour, 0)";
+						}else{
+							tableText = '<td><div class="dropdown"><button class="dropbtn">';
+							//tableText += obj[day-1][hour].name;
+							tableText += '<select style="width: 84px" id="' + day.toString() + ',' + hour.toString() + 'select"><center><div class="truncated"><option onmouseover="hoverFood(day, hour, 0)">' + obj[day-1][hour].name + '</option></select>';
+							tableText += '</button><div class="dropdown-content" id="' + day.toString() + ',' + hour.toString() + 'drop">';
+							tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
+							tableText += '<b>Preparation Time: ';
+							tableText += obj[day-1][hour].preptime.toString();
+							tableText += ' minutes</b><b>Ingredients:</b>';
+							var numIng;
+							for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
+								tableText += '<b>&emsp;&#8226;';
+								tableText += obj[day-1][hour].ingredients[numIng].name;
+								tableText += '</b>';
+							}
+							tableText += '<b>Steps:</b>';
+							var numStep;
+							for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
+								tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
+								tableText += obj[day-1][hour].steps[numStep];
+								tableText += '</b>';
+							}
+							
+							tableText += '</div></div></td>';
+							myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
 						}
-						tableText += '<b>Steps:</b>';
-						var numStep;
-						for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
-							tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
-							tableText += obj[day-1][hour].steps[numStep];
-							tableText += '</b>';
-						}
-						
-						tableText += '</div></div></td>';
-						myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
 					}
 				}
 			});
