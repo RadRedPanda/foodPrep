@@ -80,7 +80,7 @@ table{
 	var timeTable = new Array(24).fill(new Array(8));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<timeTable.length; hour++){
-		tableText += '<tr><td align="right">';
+		tableText += '<tr><td>';
 		if(hour == 0 || hour == 12){
 			tableText += '12:00 ';
 		}else{
@@ -132,7 +132,7 @@ table{
 			var timeTable = new Array(24).fill(new Array(8));
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<timeTable.length; hour++){
-				tableText += '<tr><td align="right">';
+				tableText += '<tr><td>';
 				if(hour == 0 || hour == 12){
 					tableText += '12:00 ';
 				}else{
