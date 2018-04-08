@@ -22,7 +22,7 @@ table{
 
 .empty {
 	background-color: #FF3333;
-	width: 87px;
+	width: 88px;
 	height:21px;
 }
 
@@ -32,7 +32,7 @@ table{
     padding: 2px;
     font-size: 16px;
     border: none;
-	width: 87px;
+	width: 88px;
 	height: 21px;
     white-space: nowrap;
 }
@@ -174,7 +174,7 @@ table{
 					}
 					
 					tableText += '</div></div></th>';
-					myTable.rows[obj[day-1][hour].time].cells[day].innerHTML = tableText;
+					myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
 				}
 			}
 		});
