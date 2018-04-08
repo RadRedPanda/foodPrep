@@ -89,7 +89,7 @@ table{
 	myTable.innerHTML = tableText;
 
 	function sendData() {
-		var rawData = [];
+		var data = [];
 		var day;
 		var hour;
 		var cell;
@@ -103,11 +103,10 @@ table{
 						time: cell.value,
 						day: day-1
 					};
-					rawData.push(array);
+					data.push(array);
 				}
 			}
 		}
-		var data = {JSON.stringify(rawData)};
 		alert(data);
 		var XHR = new XMLHttpRequest();
 		var urlEncodedData = "";
