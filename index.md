@@ -59,19 +59,9 @@ table{
 </style>
 </head>
 <body>
-<h2>Welcome to foodPrep, to begin, click the button below.</h2><p>
+<h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
 <button type="button" onclick="sendData({test:'ok'})" id = "butt">Click Me!</button>
 <table id="stuff">
-	<tr>
-		<th>Time</th>
-		<th>Sunday</th>
-		<th>Monday</th>
-		<th>Tuesday</th>
-		<th>Wednesday</th>
-		<th>Thursday</th>
-		<th>Friday</th>
-		<th>Saturday</th>
-	</tr>
 </table>
 <script>
 	var day;
@@ -93,7 +83,7 @@ table{
 		for(day=1; day<timeTable[hour].length; day++){
 			tableText += '<th><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
-			tableText += '" value="0" class="textInputs" pattern="[0-9]"/></th>';
+			tableText += '" value="0" class="textInputs"/></th>';
 		}
 		tableText += '</tr>';
 	}
