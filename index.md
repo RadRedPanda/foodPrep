@@ -170,6 +170,7 @@ table{
 			}
 			var myTable = document.getElementById('stuff');
 			myTable.innerHTML = tableText;
+			foodPrepArray = [];
 			for(hour=0; hour<24; hour++){
 				var foodTempArray = [];
 				for(day=0; day<7; day++){
