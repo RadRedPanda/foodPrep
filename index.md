@@ -23,7 +23,7 @@ table{
 .empty {
 	background-color: #FF3333;
 	width: 86px;
-	height:22px;
+	height:23px;
 }
 
 .dropbtn {
@@ -33,7 +33,7 @@ table{
     font-size: 16px;
     border: none;
 	width: 86px;
-	height: 22px;
+	height: 23px;
     white-space: nowrap;
 }
 
