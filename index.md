@@ -23,7 +23,7 @@ table{
 .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 2px 20px;
+    padding: 2px;
     font-size: 16px;
     border: none;
 	width: 80px;
