@@ -109,8 +109,7 @@ table{
 			myTable.innerHTML = tableText;
 			for(day = 1; day<timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
-					alert(obj[day-1][hour].time.toString());
-					myTable.rows[day].cells[obj[day-1][hour].time].innerHTML = '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][hour].name + '</button><div class="dropdown-content"><b>Preparation Time: ' + obj[day-1][hour].preptime.toString() + ' minutes</b><b>fdadsfwerfa</b></div></div></th>';
+					myTable.rows[obj[day-1][hour].time].cells[day].innerHTML = '<th><div class="dropdown"><button class="dropbtn">' + obj[day-1][hour].name + '</button><div class="dropdown-content"><b>Preparation Time: ' + obj[day-1][hour].preptime.toString() + ' minutes</b><b>fdadsfwerfa</b></div></div></th>';
 				}
 			}
 		});
