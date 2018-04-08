@@ -98,9 +98,11 @@ table{
 			for(day = 1; day < 8; day++){
 				cell = document.getElementById(day.toString() + ',' + hour.toString());
 				if(cell.value > 0){
-					array.start = hour;
-					array.time = cell.value;
-					array.day = day-1;
+					array = {
+						array.start = hour,
+						array.time = cell.value,
+						array.day = day-1
+					};
 					rawData.push(array);
 				}
 			}
