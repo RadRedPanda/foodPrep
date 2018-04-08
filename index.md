@@ -110,9 +110,9 @@ table{
 			myTable.innerHTML = tableText;
 			for(day = 1; day < timeTable[0].length; day++){
 				for(hour = 0; hour < obj[day-1].length; hour++){
-					tableText = '<th><div class="dropdown"><button class="dropbtn">';
+					tableText = '<th><div class="dropdown"><button class="dropbtn"><center>';
 					tableText += obj[day-1][hour].name;
-					tableText += '</button><div class="dropdown-content">';
+					tableText += '</center></button><div class="dropdown-content">';
 					tableText += '<b>Preparation Time: ';
 					tableText += obj[day-1][hour].preptime.toString();
 					tableText += ' minutes</b><b>Ingredients:</b>';
