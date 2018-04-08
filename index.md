@@ -86,7 +86,9 @@ table{
 			tableText += "AM";
 		}
 		for(day=1; day<timeTable[hour].length; day++){
-			tableText += '<th>None</th>';
+			tableText += '<th><input type="text" id="';
+			tableText += day.toString() + ',' + hour.toString();
+			tableText += '" value="0"/></th>';
 		}
 		tableText += '</tr>';
 	}
