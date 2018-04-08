@@ -1,7 +1,8 @@
 ---
 title: foodPrep Demo
-![GitHub Logo](https://chinesenewyear.imgix.net/assets/images/food/chinese-new-year-food-feast.jpg?q=50&w=1920&h=1080&fit=crop&auto=format)
 ---
+![GitHub Logo](https://chinesenewyear.imgix.net/assets/images/food/chinese-new-year-food-feast.jpg?q=50&w=1920&h=1080&fit=crop&auto=format)
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -73,7 +74,7 @@ table{
 <body>
 <a href="/foodPrep/about">About</a>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<button type="button" onclick="sendData()" id = "butt">Generate schedule!</button>
+<center><button type="button" onclick="sendData()" id = "butt">Generate schedule!</button></center>
 <table id="stuff">
 </table>
 <script>
