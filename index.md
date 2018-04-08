@@ -148,6 +148,8 @@ table{
 							day: day-1
 						};
 						rawData.push(array);
+					}else{
+						timeTable[hour][day-1] = 0;
 					}
 				}
 			}
