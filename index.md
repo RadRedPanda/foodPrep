@@ -72,7 +72,7 @@ table{
 <body>
 <a href="/foodPrep/about">About</a>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<button type="button" onclick="sendData()" id = "butt">Generate Schedule!</button>
+<button type="button" onclick="sendData()" id = "butt">Generate schedule!</button>
 <table id="stuff">
 </table>
 <script>
@@ -107,6 +107,8 @@ table{
 		var buttonId = document.getElementById('butt');
 		if(buttonId.innerHTML == 'Edit schedule!'){
 			buttonId.innerHTML = 'Generate schedule!';
+			var day;
+			var hour;
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 			for(hour=0; hour<24; hour++){
 				tableText += '<tr><td>';
@@ -124,7 +126,7 @@ table{
 				for(day=1; day<8; day++){
 					tableText += '<td><input type="number" id="';
 					tableText += day.toString() + ',' + hour.toString();
-					tableText += '" value="' + timeTable[hour][day-1] + '" class="textInputs"/></td>';
+					tableText += '" value="' + timeTable[hour][day-1].toString() + '" class="textInputs"/></td>';
 				}
 				tableText += '</tr>';
 			}
@@ -140,7 +142,7 @@ table{
 			for(hour = 0; hour < 24; hour++){
 				for(day = 1; day < 8; day++){
 					cell = document.getElementById(day.toString() + ',' + hour.toString());
-					if(parseInt(cell.value) > 0){
+					if(cell.value > 0){
 						timeTable[hour][day-1] = cell.value;
 						array = {
 							start: hour,
