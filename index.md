@@ -146,7 +146,7 @@ table{
 						timeTable[hour][day-1] = cell.value;
 						array = {
 							start: hour,
-							time: cell.value.toString(),
+							time: parseInt(cell.value),
 							day: day-1
 						};
 						rawData.push(array);
