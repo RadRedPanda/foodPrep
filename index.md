@@ -114,14 +114,22 @@ table{
 					tableText += '</button><div class="dropdown-content">';
 					tableText += '<b>Preparation Time: ';
 					tableText += obj[day-1][hour].preptime.toString();
-					tableText += ' minutes</b><b>Ingredients:</b><b>';
-					var numIng;
-					for(numIng = 0; numIng < obj[day-1][hour].contains.length; numIng++){
-						tableText += '&emsp;';
-						tableText += obj[day-1][hour].contains[numIng];
-						tableText += '</b><b>'
+					tableText += ' minutes</b><b>Ingredients:</b>';
+					//var numIng;
+					//for(numIng = 0; numIng < obj[day-1][hour].contains.length; numIng++){
+					//	tableText += '<b>&emsp;';
+					//	tableText += obj[day-1][hour].contains[numIng];
+					//	tableText += '</b>';
+					//}
+					tableText += '<b>Steps:</b>';
+					var numStep;
+					for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
+						tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
+						tableText += obj[day-1][hour].steps[numStep];
+						tableText += '</b>';
 					}
-					tableText += 'fdadsfwerfa</b></div></div></th>';
+					
+					tableText += '</div></div></th>';
 					myTable.rows[obj[day-1][hour].time].cells[day].innerHTML = tableText;
 				}
 			}
