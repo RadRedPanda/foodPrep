@@ -1,6 +1,6 @@
 ---
 title: foodPrep Demo
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![GitHub Logo](https://chinesenewyear.imgix.net/assets/images/food/chinese-new-year-food-feast.jpg?q=50&w=1920&h=1080&fit=crop&auto=format)
 ---
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
