@@ -22,7 +22,7 @@ table{
 
 .empty {
 	background-color: #FF3333;
-	width: 85px;
+	width: 84px;
 	height: 23px;
 }
 
@@ -32,7 +32,7 @@ table{
     padding: 2px;
     font-size: 16px;
     border: none;
-	width: 85px;
+	width: 84px;
 	height: 23px;
     white-space: nowrap;
 }
@@ -71,7 +71,7 @@ table{
 </head>
 <body>
 <h2>Welcome to foodPrep, to begin, enter the minutes available during the respective time, and then click the button below.</h2><p>
-<button type="button" onclick="sendData()" id = "butt">Click Me!</button>
+<button type="button" onclick="sendData()" id = "butt">Generate Schedule</button>
 <table id="stuff">
 </table>
 <script>
