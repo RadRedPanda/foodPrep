@@ -78,9 +78,9 @@ table{
 <script>
 	var day;
 	var hour;
-	var timeTable = new Array(24).fill(new Array(8));
+	var timeTable = new Array(24).fill(new Array(7));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
-	for(hour=0; hour<timeTable.length; hour++){
+	for(hour=0; hour<24; hour++){
 		tableText += '<tr><td>';
 		if(hour == 0 || hour == 12){
 			tableText += '12:00 ';
@@ -93,7 +93,7 @@ table{
 			tableText += 'AM';
 		}
 		tableText += '</td>';
-		for(day=1; day<timeTable[hour].length; day++){
+		for(day=1; day<8; day++){
 			tableText += '<td><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
 			tableText += '" value="0" class="textInputs"/></td>';
@@ -104,38 +104,11 @@ table{
 	myTable.innerHTML = tableText;
 
 	function sendData() {
-		if(document.getElementById('1,1') == null){
-			return;
-		}
-		var rawData = [];
-		var day;
-		var hour;
-		var cell;
-		var array;
-		for(hour = 0; hour < 24; hour++){
-			for(day = 1; day < 8; day++){
-				cell = document.getElementById(day.toString() + ',' + hour.toString());
-				if(cell.value > 0){
-					array = {
-						start: hour,
-						time: cell.value,
-						day: day-1
-					};
-					rawData.push(array);
-				}
-			}
-		}
-		var data = JSON.stringify(rawData);
-		var XHR = new XMLHttpRequest();
-
-		// Define what happens on successful data submission
-		XHR.addEventListener('load', function(event) {
-			var obj = JSON.parse(XHR.responseText);
-			var day;
-			var hour;
-			var timeTable = new Array(24).fill(new Array(8));
+		var buttonId = document.getElementById('butt');
+		if(buttonId.innerHTML == 'Edit Schedule!'){
+			buttonId.innerHTML = 'Generate schedule!';
 			tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
-			for(hour=0; hour<timeTable.length; hour++){
+			for(hour=0; hour<24; hour++){
 				tableText += '<tr><td>';
 				if(hour == 0 || hour == 12){
 					tableText += '12:00 ';
@@ -143,61 +116,113 @@ table{
 					tableText += (hour % 12).toString() + ':00 ';
 				}
 				if(hour > 11){
-					tableText += "PM";
+					tableText += 'PM';
 				}else{
-					tableText += "AM";
+					tableText += 'AM';
 				}
 				tableText += '</td>';
-				for(day=1; day<timeTable[hour].length; day++){
-					tableText += '<td><div class="empty"></div></td>';
+				for(day=1; day<8; day++){
+					tableText += '<td><input type="number" id="';
+					tableText += day.toString() + ',' + hour.toString();
+					tableText += '" value="' + timeTable[hour][day-1].toString() + '" class="textInputs"/></td>';
 				}
 				tableText += '</tr>';
 			}
 			var myTable = document.getElementById('stuff');
-			myTable.innerHTML = tableText;
-		
-			for(day = 1; day < timeTable[0].length; day++){
-				for(hour = 0; hour < obj[day-1].length; hour++){
-					tableText = '<td><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
-					tableText += obj[day-1][hour].name;
-					tableText += '</div></center></button><div class="dropdown-content">';
-					tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
-					tableText += '<b>Preparation Time: ';
-					tableText += obj[day-1][hour].preptime.toString();
-					tableText += ' minutes</b><b>Ingredients:</b>';
-					var numIng;
-					for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
-						tableText += '<b>&emsp;&#8226;';
-						tableText += obj[day-1][hour].ingredients[numIng].name;
-						tableText += '</b>';
+			myTable.innerHTML = tableText;		
+		}else{
+			buttonId.innerHTML = 'Edit schedule!';
+			var rawData = [];
+			var day;
+			var hour;
+			var cell;
+			var array;
+			for(hour = 0; hour < 24; hour++){
+				for(day = 1; day < 8; day++){
+					cell = document.getElementById(day.toString() + ',' + hour.toString());
+					if(cell.value > 0){
+						timeTable[hour][day-1] = cell.value;
+						array = {
+							start: hour,
+							time: cell.value,
+							day: day-1
+						};
+						rawData.push(array);
 					}
-					tableText += '<b>Steps:</b>';
-					var numStep;
-					for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
-						tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
-						tableText += obj[day-1][hour].steps[numStep];
-						tableText += '</b>';
-					}
-					
-					tableText += '</div></div></td>';
-					myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
 				}
 			}
-		});
+			var data = JSON.stringify(rawData);
+			var XHR = new XMLHttpRequest();
 
-		// Define what happens in case of error
-		XHR.addEventListener('error', function(event) {
-			alert('Oops! Something went wrong.');
-		});
+			// Define what happens on successful data submission
+			XHR.addEventListener('load', function(event) {
+				var obj = JSON.parse(XHR.responseText);
+				var day;
+				var hour;
+				tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
+				for(hour=0; hour<24; hour++){
+					tableText += '<tr><td>';
+					if(hour == 0 || hour == 12){
+						tableText += '12:00 ';
+					}else{
+						tableText += (hour % 12).toString() + ':00 ';
+					}
+					if(hour > 11){
+						tableText += "PM";
+					}else{
+						tableText += "AM";
+					}
+					tableText += '</td>';
+					for(day=1; day<8; day++){
+						tableText += '<td><div class="empty"></div></td>';
+					}
+					tableText += '</tr>';
+				}
+				var myTable = document.getElementById('stuff');
+				myTable.innerHTML = tableText;
+			
+				for(day = 1; day < 8; day++){
+					for(hour = 0; hour < obj[day-1].length; hour++){
+						tableText = '<td><div class="dropdown"><button class="dropbtn"><center><div class="truncated">';
+						tableText += obj[day-1][hour].name;
+						tableText += '</div></center></button><div class="dropdown-content">';
+						tableText += '<center><b>' + obj[day-1][hour].name + '</b></center>';
+						tableText += '<b>Preparation Time: ';
+						tableText += obj[day-1][hour].preptime.toString();
+						tableText += ' minutes</b><b>Ingredients:</b>';
+						var numIng;
+						for(numIng = 0; numIng < obj[day-1][hour].ingredients.length; numIng++){
+							tableText += '<b>&emsp;&#8226;';
+							tableText += obj[day-1][hour].ingredients[numIng].name;
+							tableText += '</b>';
+						}
+						tableText += '<b>Steps:</b>';
+						var numStep;
+						for(numStep = 0; numStep < obj[day-1][hour].steps.length; numStep++){
+							tableText += '<b>&emsp;' + (numStep + 1).toString() + ': ';
+							tableText += obj[day-1][hour].steps[numStep];
+							tableText += '</b>';
+						}
+						
+						tableText += '</div></div></td>';
+						myTable.rows[obj[day-1][hour].time + 1].cells[day].innerHTML = tableText;
+					}
+				}
+			});
 
-		// Set up our request
-		XHR.open('POST', 'https://mealplan.mccarty.io/foodplan');
+			// Define what happens in case of error
+			XHR.addEventListener('error', function(event) {
+				alert('Oops! Something went wrong.');
+			});
 
-		// Add the required HTTP header for form data POST requests
-		XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			// Set up our request
+			XHR.open('POST', 'https://mealplan.mccarty.io/foodplan');
 
-		// Finally, send our data.
-		XHR.send(data);
+			// Add the required HTTP header for form data POST requests
+			XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
+			// Finally, send our data.
+			XHR.send(data);
+		}
 	}
 </script>
