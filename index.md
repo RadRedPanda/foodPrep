@@ -21,7 +21,7 @@ table{
 }
 
 .empty {
-	background-color: #FF3333;
+	background-color: #BB3333;
 	width: 84px;
 	height: 23px;
 }
@@ -80,17 +80,18 @@ table{
 	var timeTable = new Array(24).fill(new Array(8));
 	tableText = '<tr><th>Time</th><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>';
 	for(hour=0; hour<timeTable.length; hour++){
-		tableText += '<tr><th>';
+		tableText += '<tr><th><right>';
 		if(hour == 0 || hour == 12){
 			tableText += '12:00 ';
 		}else{
 			tableText += (hour % 12).toString() + ':00 ';
 		}
 		if(hour > 11){
-			tableText += "PM";
+			tableText += 'PM';
 		}else{
-			tableText += "AM";
+			tableText += 'AM';
 		}
+		tableText += '</right></th>';
 		for(day=1; day<timeTable[hour].length; day++){
 			tableText += '<th><input type="number" id="';
 			tableText += day.toString() + ',' + hour.toString();
